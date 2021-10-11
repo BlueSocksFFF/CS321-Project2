@@ -4,7 +4,7 @@
  * Instructor: Prof. Al Madi
  */
 
-public class Stack{
+public class Stack<T>{
     
     private Node firstNode;
 
@@ -13,23 +13,29 @@ public class Stack{
     }
 
     public void push(T d){
-        Node current = this.firstNode;
-        while (current.next != null) {
-            current = current.next;
+        if(isEmpty()){
+            Node newNode = new Node(d);
+            this.firstNode = newNode;
         }
-        current.addNext(d);
+        else{
+           Node current = this.firstNode;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.addNext(d); 
+        }
     }
 
     public T pop(){
         Node toPop = this.firstNode;
         this.firstNode = toPop.next;
-        T data = toPop.data;
+        T data = (T) toPop.data;
         return data;
     }
 
     public T peek(){
         Node first = this.firstNode;
-        return first.data;
+        return (T) first.data;
     }
 
     public boolean isEmpty(){
@@ -42,7 +48,7 @@ public class Stack{
     public String toString(){
         String str = "";
         Node curNode = this.firstNode;
-        while (curNode.next != null){
+        while (curNode != null){
             str += curNode.toString();
             curNode = curNode.next;
         }
@@ -60,15 +66,10 @@ public class Stack{
             this.prev = null;
         }
 
-        public Node(T d, Node p){
-            this.data = d;
-            this.next = null;
-            this.prev = p;
-        }
-
         public void addNext(T d){
-            Node nexNode = new Node(d, p);
+            Node nexNode = new Node(d);
             this.next = nexNode;
+            nexNode.prev = this;
         }
 
         public String toString(){
@@ -76,5 +77,10 @@ public class Stack{
             str += data.toString() + ", ";
             return str;
         }
+    }
+
+    public static void main (String [] args){
+
+
     }
 }
