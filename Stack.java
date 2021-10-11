@@ -13,16 +13,13 @@ public class Stack<T>{
     }
 
     public void push(T d){
+        Node newNode = new Node(d);
         if(isEmpty()){
-            Node newNode = new Node(d);
             this.firstNode = newNode;
         }
         else{
-           Node current = this.firstNode;
-            while (current.next != null) {
-                current = current.next;
-            }
-            current.addNext(d); 
+            newNode.setNext(this.firstNode);
+            this.firstNode = newNode;
         }
     }
 
@@ -66,10 +63,8 @@ public class Stack<T>{
             this.prev = null;
         }
 
-        public void addNext(T d){
-            Node nexNode = new Node(d);
-            this.next = nexNode;
-            nexNode.prev = this;
+        public void setNext(Node n){
+            this.next = n;
         }
 
         public String toString(){
