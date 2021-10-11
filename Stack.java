@@ -73,9 +73,4 @@ public class Stack<T>{
             return str;
         }
     }
-
-    public static void main (String [] args){
-
-
-    }
 }
