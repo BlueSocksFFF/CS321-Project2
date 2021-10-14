@@ -9,6 +9,8 @@ public class Converter{
 
     public static void main(String[] args) {
         
+        //( ( AX + ( BY '*'' C ) ) / ( D4 - E ) ) ;
+        //The problem is in command line arguemnts
         ArrayList<String> list = new ArrayList<String>();
         list.add("(");
         list.add("(");
@@ -52,42 +54,6 @@ public class Converter{
 
         String result = s1.peek();
         System.out.println(result);
-
-        /*
-        //Stack<String> s1 = new Stack<String>();
-        if (args.length<1){
-            System.out.println("Please add inputs");
-            System.exit(0);
-        }
-        for (int i = 0; i < args.length; i++) {
-            System.out.println(args[0]);
-        }
-        /*
-        int i = 0;
-        String token = args[i];
-        while (i < args.length-1){
-            System.out.println(i);
-            System.out.println(token);
-            while (!token.equals(";")){
-                //System.out.println("looped");
-                if (token.equals(")")){
-                    String right = s1.pop();
-                    String oper = s1.pop();
-                    String left = s1.pop();
-                    s1.push(left+right+oper);
-                }
-                else{
-                    if (!token.equals("(")){
-                        s1.push(token);
-                    }
-                }
-                i++;
-                token = args[i];
-            }
-        }
-        String result = s1.peek();
-        System.out.println(result);
-        */
     }
 }
  
