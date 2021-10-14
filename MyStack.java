@@ -4,11 +4,11 @@
  * Instructor: Prof. Al Madi
  */
 
-public class Stack<T>{
+public class MyStack<T>{
     
     private Node firstNode;
 
-    public Stack(){
+    public MyStack(){
         this.firstNode = null;
     }
 
