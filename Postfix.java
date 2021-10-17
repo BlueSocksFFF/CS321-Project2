@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Stack;
 import java.io.FileWriter;
 
 public class Postfix{
@@ -51,8 +52,21 @@ public class Postfix{
     }
 
     //A method for writing a file with a list of postfix expressions
-    public void write (){
-        return;
+    public void write (String filename){
+        Stack<String> writeStack = new Stack<String>();
+        while (!this.stack.isEmpty()) {
+            writeStack.push((String)this.stack.pop());  
+        }
+        try {
+            FileWriter writer = new FileWriter(filename);
+            while (!writeStack.isEmpty()) {
+                writer.write((String)writeStack.pop() + System.lineSeparator());
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("Error");
+            e.printStackTrace();
+        }
     }
 
     //Convert Infix tokens to Postfixes and store them in the stack
@@ -90,8 +104,7 @@ public class Postfix{
         
     }
 
-    //The overall process of read-process-write
-    //Now lack write
+    //The overall process of read-process
     public void process(){
         try{
             FileReader fileReader = new FileReader(this.filename);
@@ -116,7 +129,13 @@ public class Postfix{
     }
 
     public static void main(String[] args) {
-        Postfix postfix = new Postfix("Infixes.txt");
+        if (args.length < 1) {
+            System.out.println("Please enter infix file and the output result file name");
+            System.exit(0);
+        }
+        Postfix postfix = new Postfix(args[0]);
+        postfix.process();
+        postfix.write(args[1]);
         /*
         //Test Read
         postfix.read("Infixes.txt");
@@ -124,10 +143,12 @@ public class Postfix{
         //Test Convert
         postfix.convert();
         postfix.printStack();
-        */
+        
         //Test process
         postfix.process();
         postfix.printStack();
+        postfix.write();
+        */
 
     }
 
