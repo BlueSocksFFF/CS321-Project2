@@ -50,6 +50,12 @@ public class Postfix{
         }
     }
 
+    //A method for changing an ArrayList of infix expressions to 
+    //an ArrayList of postfix expressions using a stack
+    public void converter() {
+        return;
+    }
+
     //A method for writing a file with a list of postfix expressions
     public void write (){
         return;
