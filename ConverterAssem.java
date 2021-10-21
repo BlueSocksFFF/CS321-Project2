@@ -27,35 +27,39 @@ public class ConverterAssem{
                 tempNum++;
             }
             i++;
-            
+            //System.out.println("Iteration "+ i);
+            //System.out.println(stack);
+
         }
-        while (!stack.isEmpty()) {
-            System.out.println(stack.pop());
+        if (stack.isEmpty()) {
+            System.out.println("Error");
         }
     }
 
     public static String evaluate(String l, String op, String r, int index){
-        String result = "";
-        result = "LD " + l + "\n";
+        String str = "LD " + l;
+        System.out.println(str);
         switch (op) {
             case "*":
-                result += "ML ";
+                str = "ML ";
                 break;
             case "+":
-                result += "AD ";
+                str = "AD ";
                 break;
             case "-":
-                result += "SB ";
+                str = "SB ";
                 break;
             case "/":
-                result += "DV ";
+                str = "DV ";
                 break;
             default:
                 System.out.println("Error");
-                break;
+                System.exit(0);
         }
-        result += r + "\n";
-        result += "ST " + "TMP" + Integer.toString(index);
-        return result;
+        str += r;
+        System.out.println(str);
+        str= "ST " + "TMP" + Integer.toString(index);
+        System.out.println(str);
+        return("TMP" + Integer.toString(index));
     }
 }
