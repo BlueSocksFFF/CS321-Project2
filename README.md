@@ -12,10 +12,13 @@ The third increment is very similar to the second one besides we try to convert 
 ## Results
 Here's the results for the test infix inputs:
 data3-1.txt
+3-1-result.txt
+3-1-result-assembly.txt
 
 data3-2-1.txt
 
 infixes.txt (our own test file)
+postfixResult.txt
 
 ## Contribution
 ### Diane
@@ -23,6 +26,7 @@ Kayla and I implemented and tested increment 1 and the algorithm part of increme
 And then I tested Kayla's read method in increment 2 and implemented and tested the write method.
 I also implemented and tested the algorithm part in increment 3.
 ### Kayla
+Diane and I implemented and tested increment 1 and the algorithm part of increment 2 using pair-programming where we swicthed off every 20 minutes. I wrote the read method and Diane wrote the write and convert methods. Diane also tested those methods using the given test files and the test file she created. Diane wrote the algorithim for increment 3 and I used all aspects of the three increatments to create the assembly file. We worked together to fix bugs throughout the project.
 
 ## Team Experience Reflection
 ### Diane
