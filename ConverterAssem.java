@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Stack;
 
 /**
  * Authors: Diane Zhang, Kayla Dixon
@@ -12,45 +11,50 @@ import java.util.Stack;
 public class ConverterAssem{
     public static void main(String[] args) {
         String postfixExpression = "AX BY C * + D4 E - /";
-        Stack<String> stack = new Stack<String>();
+        MyStack<String> stack = new MyStack<String>();
         String[] tokens = postfixExpression.split(" ");
         String[] operators = {"*", "+", "-", "/"};
         int i = 0;
         int tempNum = 1;
         while (i < tokens.length) {
-            t = tokens[i];
+            String t = tokens[i];
             if (!Arrays.asList(operators).contains(t)) {
                 stack.push(t);
             } else {
                 String right = stack.pop();
                 String left = stack.pop();
                 stack.push(evaluate(left, t, right, tempNum));
+                tempNum++;
             }
             i++;
+            
         }
-        System.out.println(stack);
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
+        }
     }
 
-    public String evaluate(String l, String op, String r, int index){
+    public static String evaluate(String l, String op, String r, int index){
         String result = "";
         result = "LD " + l + "\n";
         switch (op) {
             case "*":
-                result += "ML";
+                result += "ML ";
                 break;
             case "+":
-                result += "AD";
+                result += "AD ";
                 break;
             case "-":
-                result += "SB";
+                result += "SB ";
                 break;
             case "/":
-                result += "DV";
+                result += "DV ";
                 break;
             default:
                 System.out.println("Error");
                 break;
         }
+        result += r + "\n";
         result += "ST " + "TMP" + Integer.toString(index);
         return result;
     }
