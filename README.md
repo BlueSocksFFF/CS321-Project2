@@ -2,8 +2,11 @@
 
 ## Abstract
 In this project, there are three parts/increments.
+
 In the first increment, we need to implement our own stack file which would be used later in the following increments.
+
 In the second increment, we start from infix expressions and convert them to postfix ones. This is further divided into two parts: first, implementing and testing the algorithm. second, combining the algorithm with the file read and file write functions.
+
 The third increment is very similar to the second one besides we try to convert from postfix to assembly this time. We also implement and test the algorithm in the first part, but for the second part, we conbime it with the code we had in the second increment and build one file that would convert from infixes to assembly directly.
 
 ## Results
