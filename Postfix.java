@@ -35,7 +35,7 @@ public class Postfix{
             FileReader fileReader = new FileReader(this.filename);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = bufferedReader.readLine();
-            if (!(line==null)){
+            while (!(line==null)){
                 this.tokens = line.split(" ");
             }
             bufferedReader.close();

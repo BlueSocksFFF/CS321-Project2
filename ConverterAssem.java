@@ -23,7 +23,7 @@ public class ConverterAssem{
             } else {
                 String right = stack.pop();
                 String left = stack.pop();
-                stack.push(evaluate(left, t, right, tempNum));
+                //stack.push(evaluate(left, t, right, tempNum));
                 tempNum++;
             }
             i++;
