@@ -11,14 +11,12 @@ The third increment is very similar to the second one besides we try to convert 
 
 ## Results
 Here's the results for the test infix inputs:
-data3-1.txt
-3-1-result.txt
-3-1-result-assembly.txt
+
+data3-1.txt --> 3-1-result.txt, 3-1-result-assembly.txt
 
 data3-2-1.txt
 
-infixes.txt (our own test file)
-postfixResult.txt
+infixes.txt (our own test file) --> postfixResult.txt
 
 ## Contribution
 ### Diane
@@ -31,6 +29,8 @@ Diane and I implemented and tested increment 1 and the algorithm part of increme
 ## Team Experience Reflection
 ### Diane
 The Overall experience is good to me. We coorpertaed and communited effectively. We started early and had great achievements by finishing the project successfully and did the extensions 1 and 2. Pair coding is also fun and effective. However, with the fall break and packed schedule for both people, it's hard to meet and do work during that time, which added pressure to us when we came back after break and there're only two days left for us to work.
+### Kayla
+I reaally enjoyed working with Diane! She was very patient with me espically since I am not a very fast coder. We communicated well and were able to be productive. It was difficult to work on the project near the end because of fall break but we eventually were able to finish up in timely manner.
 
 ## Acknowledgement and References
 We searched for Git commands and file read and write on Google/StackOverFlow.
