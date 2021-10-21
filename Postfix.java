@@ -23,7 +23,7 @@ public class Postfix{
         this.filename = filename;
     }
 
-    //Test method for egtting the tokens read
+    //Test method for getting the tokens read
     public String[] getTokens(){
         return this.tokens;
     }
@@ -149,7 +149,6 @@ public class Postfix{
         postfix.printStack();
         postfix.write();
         */
-
     }
 
 }
