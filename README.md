@@ -2,7 +2,7 @@
 
 ## Increment 1
 Stack file: [MyStack.java](MyStack.java)\
-Test file: [TestStack.java](TestStack.java)
+Test file: [testStack.java](testStack.java)
 
 ## Increment 2
 Algorithm implementation: [Converter.java](Converter.java)\
